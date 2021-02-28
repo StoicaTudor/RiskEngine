@@ -7,52 +7,61 @@ import java.util.Map;
 
 public class GameInit {
 
-	public HashMap<RegionName, GameRegion> getMapGraph() {
+	private HashMap<RegionName, GameRegion> graph = new HashMap<RegionName, GameRegion>();
+	// the graph
 
-		GameRegion ALASKA = new GameRegion(RegionName.ALASKA, Continent.NORTH_AMERICA);
-		GameRegion NORD_WEST_TERITORY = new GameRegion(RegionName.NORD_WEST_TERITORY, Continent.NORTH_AMERICA);
-		GameRegion VANCOUVER = new GameRegion(RegionName.VANCOUVER, Continent.NORTH_AMERICA);
-		GameRegion WINNIPEG = new GameRegion(RegionName.WINNIPEG, Continent.NORTH_AMERICA);
-		GameRegion QUEBEC = new GameRegion(RegionName.QUEBEC, Continent.NORTH_AMERICA);
-		GameRegion WEST_UNITED_STATES = new GameRegion(RegionName.WEST_UNITED_STATES, Continent.NORTH_AMERICA);
-		GameRegion CENTRAL_AMERICA = new GameRegion(RegionName.CENTRAL_AMERICA, Continent.NORTH_AMERICA);
-		GameRegion GREENLAND = new GameRegion(RegionName.GREENLAND, Continent.NORTH_AMERICA);
-		GameRegion EAST_UNITED_STATES = new GameRegion(RegionName.EAST_UNITED_STATES, Continent.NORTH_AMERICA);
+	///////////////////////////////////////////////////////////////////////// initializing
+	///////////////////////////////////////////////////////////////////////// Game
+	///////////////////////////////////////////////////////////////////////// Regions
+	GameRegion ALASKA = new GameRegion(RegionName.ALASKA, Continent.NORTH_AMERICA);
+	GameRegion NORD_WEST_TERITORY = new GameRegion(RegionName.NORD_WEST_TERITORY, Continent.NORTH_AMERICA);
+	GameRegion VANCOUVER = new GameRegion(RegionName.VANCOUVER, Continent.NORTH_AMERICA);
+	GameRegion WINNIPEG = new GameRegion(RegionName.WINNIPEG, Continent.NORTH_AMERICA);
+	GameRegion QUEBEC = new GameRegion(RegionName.QUEBEC, Continent.NORTH_AMERICA);
+	GameRegion WEST_UNITED_STATES = new GameRegion(RegionName.WEST_UNITED_STATES, Continent.NORTH_AMERICA);
+	GameRegion CENTRAL_AMERICA = new GameRegion(RegionName.CENTRAL_AMERICA, Continent.NORTH_AMERICA);
+	GameRegion GREENLAND = new GameRegion(RegionName.GREENLAND, Continent.NORTH_AMERICA);
+	GameRegion EAST_UNITED_STATES = new GameRegion(RegionName.EAST_UNITED_STATES, Continent.NORTH_AMERICA);
 
-		GameRegion BRASIL = new GameRegion(RegionName.BRASIL, Continent.SOUTH_AMERICA);
-		GameRegion PERU = new GameRegion(RegionName.PERU, Continent.SOUTH_AMERICA);
-		GameRegion ARGENTINA = new GameRegion(RegionName.ARGENTINA, Continent.SOUTH_AMERICA);
-		GameRegion COLUMBIA = new GameRegion(RegionName.COLUMBIA, Continent.SOUTH_AMERICA);
+	GameRegion BRASIL = new GameRegion(RegionName.BRASIL, Continent.SOUTH_AMERICA);
+	GameRegion PERU = new GameRegion(RegionName.PERU, Continent.SOUTH_AMERICA);
+	GameRegion ARGENTINA = new GameRegion(RegionName.ARGENTINA, Continent.SOUTH_AMERICA);
+	GameRegion COLUMBIA = new GameRegion(RegionName.COLUMBIA, Continent.SOUTH_AMERICA);
 
-		GameRegion NORTH_AFRICA = new GameRegion(RegionName.NORTH_AFRICA, Continent.AFRICA);
-		GameRegion EGIPT = new GameRegion(RegionName.EGIPT, Continent.AFRICA);
-		GameRegion SAHARA = new GameRegion(RegionName.SAHARA, Continent.AFRICA);
-		GameRegion CONGO = new GameRegion(RegionName.CONGO, Continent.AFRICA);
-		GameRegion EAST_AFRICA = new GameRegion(RegionName.EAST_AFRICA, Continent.AFRICA);
-		GameRegion SOUTH_AFRICA = new GameRegion(RegionName.SOUTH_AFRICA, Continent.AFRICA);
+	GameRegion NORTH_AFRICA = new GameRegion(RegionName.NORTH_AFRICA, Continent.AFRICA);
+	GameRegion EGIPT = new GameRegion(RegionName.EGIPT, Continent.AFRICA);
+	GameRegion SAHARA = new GameRegion(RegionName.SAHARA, Continent.AFRICA);
+	GameRegion CONGO = new GameRegion(RegionName.CONGO, Continent.AFRICA);
+	GameRegion EAST_AFRICA = new GameRegion(RegionName.EAST_AFRICA, Continent.AFRICA);
+	GameRegion SOUTH_AFRICA = new GameRegion(RegionName.SOUTH_AFRICA, Continent.AFRICA);
 
-		GameRegion INDONESIA = new GameRegion(RegionName.INDONESIA, Continent.AUSTRALIA);
-		GameRegion PAPUA = new GameRegion(RegionName.PAPUA, Continent.AUSTRALIA);
-		GameRegion WEST_AUSTRALIA = new GameRegion(RegionName.WEST_AUSTRALIA, Continent.AUSTRALIA);
-		GameRegion QUEENSLAND = new GameRegion(RegionName.QUEENSLAND, Continent.AUSTRALIA);
+	GameRegion INDONESIA = new GameRegion(RegionName.INDONESIA, Continent.AUSTRALIA);
+	GameRegion PAPUA = new GameRegion(RegionName.PAPUA, Continent.AUSTRALIA);
+	GameRegion WEST_AUSTRALIA = new GameRegion(RegionName.WEST_AUSTRALIA, Continent.AUSTRALIA);
+	GameRegion QUEENSLAND = new GameRegion(RegionName.QUEENSLAND, Continent.AUSTRALIA);
 
-		GameRegion WEST_EUROPE = new GameRegion(RegionName.WEST_EUROPE, Continent.EUROPE);
-		GameRegion CENTRAL_EUROPE = new GameRegion(RegionName.CENTRAL_EUROPE, Continent.EUROPE);
-		GameRegion SCANDINAVIA = new GameRegion(RegionName.SCANDINAVIA, Continent.EUROPE);
-		GameRegion EAST_EUROPE = new GameRegion(RegionName.EAST_EUROPE, Continent.EUROPE);
-		GameRegion EUROPEAN_RUSSIA = new GameRegion(RegionName.EUROPEAN_RUSSIA, Continent.EUROPE);
+	GameRegion WEST_EUROPE = new GameRegion(RegionName.WEST_EUROPE, Continent.EUROPE);
+	GameRegion CENTRAL_EUROPE = new GameRegion(RegionName.CENTRAL_EUROPE, Continent.EUROPE);
+	GameRegion SCANDINAVIA = new GameRegion(RegionName.SCANDINAVIA, Continent.EUROPE);
+	GameRegion EAST_EUROPE = new GameRegion(RegionName.EAST_EUROPE, Continent.EUROPE);
+	GameRegion EUROPEAN_RUSSIA = new GameRegion(RegionName.EUROPEAN_RUSSIA, Continent.EUROPE);
 
-		GameRegion MIDDLE_EAST = new GameRegion(RegionName.MIDDLE_EAST, Continent.ASIA);
-		GameRegion IRAN = new GameRegion(RegionName.IRAN, Continent.ASIA);
-		GameRegion CENTRAL_RUSSIA = new GameRegion(RegionName.CENTRAL_RUSSIA, Continent.ASIA);
-		GameRegion SIBERIA = new GameRegion(RegionName.SIBERIA, Continent.ASIA);
-		GameRegion MONGOLIA = new GameRegion(RegionName.MONGOLIA, Continent.ASIA);
-		GameRegion BAIKAL = new GameRegion(RegionName.BAIKAL, Continent.ASIA);
-		GameRegion CHINA = new GameRegion(RegionName.CHINA, Continent.ASIA);
-		GameRegion INDIA = new GameRegion(RegionName.INDIA, Continent.ASIA);
-		GameRegion INDO_CHINA = new GameRegion(RegionName.INDO_CHINA, Continent.ASIA);
-		GameRegion JAPAN = new GameRegion(RegionName.JAPAN, Continent.ASIA);
-		GameRegion KAMCEATKA = new GameRegion(RegionName.KAMCEATKA, Continent.ASIA);
+	GameRegion MIDDLE_EAST = new GameRegion(RegionName.MIDDLE_EAST, Continent.ASIA);
+	GameRegion IRAN = new GameRegion(RegionName.IRAN, Continent.ASIA);
+	GameRegion CENTRAL_RUSSIA = new GameRegion(RegionName.CENTRAL_RUSSIA, Continent.ASIA);
+	GameRegion SIBERIA = new GameRegion(RegionName.SIBERIA, Continent.ASIA);
+	GameRegion MONGOLIA = new GameRegion(RegionName.MONGOLIA, Continent.ASIA);
+	GameRegion BAIKAL = new GameRegion(RegionName.BAIKAL, Continent.ASIA);
+	GameRegion CHINA = new GameRegion(RegionName.CHINA, Continent.ASIA);
+	GameRegion INDIA = new GameRegion(RegionName.INDIA, Continent.ASIA);
+	GameRegion INDO_CHINA = new GameRegion(RegionName.INDO_CHINA, Continent.ASIA);
+	GameRegion JAPAN = new GameRegion(RegionName.JAPAN, Continent.ASIA);
+	GameRegion KAMCEATKA = new GameRegion(RegionName.KAMCEATKA, Continent.ASIA);
+	///////////////////////////////////////////////////////////////////////// initializing
+	///////////////////////////////////////////////////////////////////////// Game
+	///////////////////////////////////////////////////////////////////////// Regions
+
+	public void initNeighbours() {
 
 		List ALASKA_NEIGHBOURS = new ArrayList<RegionName>();
 		// ALASKA_NEIGHBOURS.add(KAMCEATKA.regionName);
@@ -116,7 +125,10 @@ public class GameInit {
 		WINNIPEG.neighbours = WINNIPEG_NEIGHBOURS;
 		VANCOUVER.neighbours = VANCOUVER_NEIGHBOURS;
 
-		HashMap<RegionName, GameRegion> graph = new HashMap<RegionName, GameRegion>();
+		System.gc();
+	}
+
+	private void initGraph() {
 
 		graph.put(RegionName.ALASKA, ALASKA);
 		graph.put(RegionName.NORD_WEST_TERITORY, NORD_WEST_TERITORY);
@@ -127,6 +139,9 @@ public class GameInit {
 		graph.put(RegionName.WEST_UNITED_STATES, WEST_UNITED_STATES);
 		graph.put(RegionName.EAST_UNITED_STATES, EAST_UNITED_STATES);
 		graph.put(RegionName.CENTRAL_AMERICA, CENTRAL_AMERICA);
+	}
+
+	private void setArmies() {
 
 		graph.get(RegionName.ALASKA).occupyingArmy = Army.RED;
 		graph.get(RegionName.ALASKA).nrUnits = 5;
@@ -134,16 +149,16 @@ public class GameInit {
 		graph.get(RegionName.NORD_WEST_TERITORY).occupyingArmy = Army.BLUE;
 		graph.get(RegionName.NORD_WEST_TERITORY).nrUnits = 10;
 
-		graph.get(RegionName.VANCOUVER).occupyingArmy = Army.RED; // Army.YELLOW
+		graph.get(RegionName.VANCOUVER).occupyingArmy = Army.YELLOW;
 		graph.get(RegionName.VANCOUVER).nrUnits = 3;
 
 		graph.get(RegionName.GREENLAND).occupyingArmy = Army.BLUE;
 		graph.get(RegionName.GREENLAND).nrUnits = 2;
 
-		graph.get(RegionName.QUEBEC).occupyingArmy = Army.RED;// Army.YELLOW
+		graph.get(RegionName.QUEBEC).occupyingArmy = Army.YELLOW;
 		graph.get(RegionName.QUEBEC).nrUnits = 2;
 
-		graph.get(RegionName.CENTRAL_AMERICA).occupyingArmy = Army.RED; // Army.YELLOW
+		graph.get(RegionName.CENTRAL_AMERICA).occupyingArmy = Army.YELLOW;
 		graph.get(RegionName.CENTRAL_AMERICA).nrUnits = 10;
 
 		graph.get(RegionName.WEST_UNITED_STATES).occupyingArmy = Army.BLUE;
@@ -151,10 +166,16 @@ public class GameInit {
 
 		graph.get(RegionName.EAST_UNITED_STATES).occupyingArmy = Army.RED;
 		graph.get(RegionName.EAST_UNITED_STATES).nrUnits = 4;
+	}
 
-		System.gc();
+	public HashMap<RegionName, GameRegion> getGraph() {
+		return this.graph;
+	}
 
-		return graph;
+	public GameInit() {
+		initNeighbours();
+		initGraph();
+		setArmies();
 	}
 
 }

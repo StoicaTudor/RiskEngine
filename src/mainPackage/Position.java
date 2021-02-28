@@ -117,12 +117,12 @@ public class Position {
 		for (ArrayList<Pair<RegionName, RegionName>> currentAttackingScenario : this.attackingScenarios) {
 			// for every attacking scenario we have backtracked
 
-			HashMap<RegionName, GameRegion> newGraph = (HashMap<RegionName, GameRegion>) this.graph.clone();
+			HashMap<RegionName, GameRegion> newGraph = new HashMap<RegionName, GameRegion>(graph);
 			// copy the graph, since we will create an object of type Position, which
 			// signifies a hipotetical next scenario, for this currentAttackingScenario
 
-			ArrayList<GameRegion> newGameRegionsOccupiedByPlayer = (ArrayList<GameRegion>) this.gameRegionsOccupiedByPlayer
-					.clone();
+			ArrayList<GameRegion> newGameRegionsOccupiedByPlayer = new ArrayList<GameRegion>(
+					gameRegionsOccupiedByPlayer);
 			// copy the array, since we will create an object of type Position, which
 			// signifies a hipotetical next scenario, for this currentAttackingScenario
 

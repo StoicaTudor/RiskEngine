@@ -24,11 +24,6 @@ public class Minimax {
 
 	public double doMinimax(Position position, int currentDepth, double alpha, double beta, Army player) {
 
-//		System.out.println(player + "  ---------------> " + position.gameRegionsOccupiedByPlayer.size() + "  DEPTH = "
-//				+ currentDepth);
-//		printRegions(position);
-//		System.out.println();
-
 		position.computeChildrenOfPosition();
 		ArrayList<Position> childrenPositions = position.getChildrenOfPosition();
 
@@ -49,7 +44,7 @@ public class Minimax {
 				double currentEvaluation = doMinimax(currentPosition, currentDepth - 1, alpha, beta, enemyPlayer);
 				maxEvaluation = Math.max(maxEvaluation, currentEvaluation);
 				alpha = Math.max(alpha, currentEvaluation);
-				
+
 				if (currentEvaluation >= maxEvaluation) {
 					position.bestNextPosition = currentPosition;
 					// assign the best next position, when a new max has been found

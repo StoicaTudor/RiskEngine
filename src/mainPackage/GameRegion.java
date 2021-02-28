@@ -15,4 +15,14 @@ public class GameRegion {
 		this.regionName = regionName;
 		this.continent = continent;
 	}
+
+	public GameRegion(RegionName regionName, Continent continent, List<RegionName> neighbours, Army occupyingArmy,
+			int nrUnits) {
+
+		this.regionName = regionName;
+		this.continent = continent;
+		this.neighbours = neighbours;
+		this.occupyingArmy = occupyingArmy;
+		this.nrUnits = nrUnits;
+	}
 }

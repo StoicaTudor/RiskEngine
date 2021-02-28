@@ -1,5 +1,7 @@
 package mainPackage;
 
+import java.util.ArrayList;
+
 public class Main {
 
 	public Main() {
@@ -13,9 +15,12 @@ public class Main {
 
 		Probabilities probabilities = new Probabilities();
 		probabilities.readProbabilitiesFromFile();
+
+		ArrayList<Army> enemyArmies = new ArrayList<>();
+		enemyArmies.add(Army.RED);
+		enemyArmies.add(Army.YELLOW);
 		
-		GameGraph gameGraph = new GameGraph();
-		// gameGraph.initDummyGraph();
+		GameGraph gameGraph = new GameGraph(Army.BLUE, enemyArmies);
 	}
 
 	public static void main(String[] args) {
